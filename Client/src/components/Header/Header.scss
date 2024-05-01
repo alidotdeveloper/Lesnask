@@ -1,5 +1,13 @@
 @import "../../css-config/mixins.scss";
 
+.logo{
+    width: 150px;
+}
+@include md {
+    .logo {
+        width: 250px;
+    }
+}
 .main-header {
     width: 100%;
     padding: 0 20px;

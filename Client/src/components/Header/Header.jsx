@@ -40,7 +40,8 @@ const Header = () => {
                         <li>Categories</li>
                     </ul>
                     <div className="center" onClick={() => navigate("/")}>
-                       <img src={Logoimg} width={250} />
+
+                       <img src={Logoimg}  className="logo" />
                     </div>
                     <div className="right">
                         <TbSearch onClick={() => setSearchModal(true)} />
