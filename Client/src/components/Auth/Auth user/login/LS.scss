@@ -1,13 +1,23 @@
 
-// add paddimg to the login page heading h1
+@import "../../../../css-config/mixins.scss";
 
 
 // Variables
 $primary-color: #212121; // Black
 $secondary-color: #fff; // White
+// fix the undefine mixin error
 
-// Login page styles
-.login-page {
+
+.head-form {
+    padding: 20px !important;
+    font-size: 30px !important;
+
+    @include md {
+        font-size: 2em;
+    }
+}
+// ls-form page styles
+.LS-form-page {
     background-color: $primary-color;
     color: $secondary-color;
     width: 100%;
@@ -17,7 +27,7 @@ $secondary-color: #fff; // White
     align-items: center;
 }
 
-.login-form {
+.LS{
     background-color: $secondary-color;
     padding: 50px;
     border-radius: 5px;
@@ -29,20 +39,18 @@ $secondary-color: #fff; // White
 
 }
 
-.login-page h1 {
-    padding: 50px !important;
-}
 
 
-.login-form input {
+
+.LS-form input {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
-    border: none;
+    border: solid 1px #212121;;
     border-radius: 3px;
 }
 
-.login-form button {
+.LS-form button {
     width: 100%;
     padding: 10px;
     background-color: $primary-color;
@@ -52,6 +60,31 @@ $secondary-color: #fff; // White
     cursor: pointer;
 }
 
-.login-form button:hover {
+.LS-form button:hover {
     background-color: darken($primary-color, 10%);
+}
+
+// make this span text on the center
+
+
+.already-account{
+    margin-top: 10px;
+   
+    font-size: 14px;
+    color: #212121;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+
+}
+
+.already-account a{
+    color: #212121;
+    text-decoration: none;
+    margin-left: 5px;
+}
+.already-account a:hover{
+    color: #000000;
+    text-decoration: underline;
+    margin-left: 5px;
 }

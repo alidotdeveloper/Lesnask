@@ -8,11 +8,8 @@ import Category from "./components/Category/Category";
 import SingleProduct from "./components/SingleProduct/SingleProduct";
 import Newsletter from "./components/Footer/Newsletter/Newsletter";
 import AppContext from "./utils/context";
-import LoginComponent from "./components/Auth/login/Login";
-import RegisterComponent from "./components/Auth/Signup/Signup";
-
-//getting errror: You cannot render a <Router> inside another <Router>. You should never have more than one in your app.
-//Solution: Remove the BrowserRouter from the App.js file and wrap the App component with the BrowserRouter in the index.js file.
+import LoginComponent from "./components/Auth//Auth user/login/Login";
+import RegisterComponent from "./components/Auth/Auth user/Signup/Signup";
 
 function App() {
   return (
