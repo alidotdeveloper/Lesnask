@@ -17,6 +17,9 @@
                 flex-direction: row;
             }
             .left {
+                display: flex;
+                justify-content: center; // horizontally center
+               align-items: center;
                 width: 100%;
                 background-color: rgba(0, 0, 0, 0.05);
                 flex-shrink: 0;
@@ -24,10 +27,17 @@
                     width: 600px;
                     height: 600px;
                 }
+                // need to adjust the image to the center of div called left 
+
+               
+                
+               
                 img {
-                    width: 100%;
+                    width: 80%;
                     display: block;
                 }
+
+                
             }
             .right {
                 display: flex;
@@ -103,8 +113,8 @@
                         cursor: pointer;
                         font-size: 16px;
                         color: white;
-                        background: #8e2de2;
-                        border-bottom: 3px solid #6516aa;
+                        background: #212121;
+                        border-bottom: 3px solid #212121;
                         flex-grow: 1;
                         @include md {
                             flex-grow: unset;
