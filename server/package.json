@@ -6,8 +6,8 @@
   "scripts": {
     "develop": "strapi develop",
     "start": "strapi start",
-    "build": "strapi build",
-    "strapi": "strapi"
+    "strapi": "strapi",
+    "build": "netlify deploy --prod"
   },
   "dependencies": {
     "@strapi/plugin-i18n": "4.5.3",
