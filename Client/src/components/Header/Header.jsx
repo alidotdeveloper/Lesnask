@@ -2,7 +2,9 @@ import { useEffect, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { TbSearch } from "react-icons/tb";
 import { CgShoppingCart } from "react-icons/cg";
-import { AiOutlineHeart } from "react-icons/ai";
+import useFetch from "../../hooks/useFetch";
+import { AiOutlineUser } from "react-icons/ai";
+import {  } from "react-icons/ai";
 import "./Header.scss";
 import Search from "./Search/Search";
 import { Context } from "../../utils/context";
@@ -12,6 +14,16 @@ import Logoimg from "../../assets/logo.png"
 const Header = () => {
     const [scrolled, setScrolled] = useState(false);
     const [searchModal, setSearchModal] = useState(false);
+    const { data: user, error } = useFetch(`/api/users/me`);
+    useEffect(() => {
+        if (user) {
+            console.log('User is logged in:', user);
+        } else if (error && error.response && error.response.status === 401) {
+            console.log('User is not logged in');
+        } else if (error) {
+            console.log('An error occurred:', error);
+        }
+    }, [user, error]);
     const navigate = useNavigate();
     const handleScroll = () => {
         const offset = window.scrollY;
@@ -43,9 +55,12 @@ const Header = () => {
 
                        <img src={Logoimg}  className="logo" />
                     </div>
+                   
+                    
                     <div className="right">
                         <TbSearch onClick={() => setSearchModal(true)} />
-                        <AiOutlineHeart />
+
+                    
                         <span
                             className="cart-icon"
                             onClick={() => setShowCart(true)}

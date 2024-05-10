@@ -28,9 +28,6 @@ const LoginComponent = () => {
     console.log(values);
 
     try {
-
-      
-    
       const response = await fetch(`${API}/auth/local`, {
         method: "POST",
         headers: {
@@ -48,10 +45,17 @@ const LoginComponent = () => {
       // set the user
       setUser(data.user);
       console.log("Welcome Back! ", data.user.username, "You are now logged in.")
+
+      if (token && user) {
+        console.log('User is authenticated', token, user);
+      } else {
+        console.log('User is not authenticated');
+      }
   
       if (!response.ok) {
         throw new Error(data.message || 'Something went wrong');
       }
+
   
       // Set user data and navigate to another page
 
